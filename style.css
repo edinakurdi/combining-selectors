@@ -1,0 +1,85 @@
+body {
+    background-color: #222;
+    color: white;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;    
+}
+
+table, th, td {
+    border: 2px solid rgb(223, 223, 223);
+    border-collapse: collapse;
+    padding: 10px;
+}
+
+table {
+    max-width: 80%;
+    width: 80%;
+    font-size: 18px;
+    margin: 70px;
+}
+
+td, th {
+    background-color: teal;
+}
+
+
+thead {
+    background-color: pink;
+}
+
+div{
+    background: linear-gradient(0deg, black, rgb(65, 65, 65) );
+    border: 2px solid rgb(223, 223, 223);
+    border-radius: 20px;
+    margin: 70px;
+    padding: 20px;
+    max-width: 80%;
+}
+
+
+code{
+    display: inline-block;
+    border: 1px solid rgba(255, 255, 255,0.3);
+    border-radius: 5px;
+    padding: 3px 5px 3px 5px;
+    margin: 2px;
+    font-size: 20px;
+    background-color: rgba(128, 128, 128, 0.5);
+}
+
+.description {
+    font-style: italic;
+    color: rgba(223, 223, 223, 0.7) ;
+}
+
+
+/* Grouping selectors ==================================== */
+.group1, .group2 {
+    color: #00EDED;
+}
+/* Descendant combinator================================== */
+
+article p {
+    color: #00EDED;    
+}
+article .class {
+    color: #A18808
+}
+
+/* Direct child combinator =============================== */
+
+ul > li {
+    color: #00EDED;
+}
+
+ul > .li_class {
+    color:#A18808 ;
+}
+
+/* General sibling combinator ============================ */
+q ~ samp {
+    color: #00EDED;
+}
+
+q + small {
+    color: #00EDED;
+}

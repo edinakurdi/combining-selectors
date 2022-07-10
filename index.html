@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>
+        Combining selectors
+    </h1>
+    <h2>
+        Selectors
+    </h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Selector example</th>
+                <th>Selector name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <code>p</code> <span>, </span> <code>h1</code>
+                </td>
+                <td>type / element selector</td>
+            </tr>
+
+            <tr>
+                <td>
+                    <code>.class</code>  
+                </td>
+                <td>class selector</td>
+            </tr>
+
+            <tr>
+                <td>
+                    <code>#id</code>  
+                </td>
+                <td>ID selector</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <section>
+        <!-- Grouping selectors =================================== -->
+    <div> 
+            <h1>1. Grouping selectors</h1>
+            <p> <code>x, y {...} </code></p>    
+            <p> e.g. </p>
+            <p>
+                <code>article, p {...}</code> or <code>article, .class {...}</code></p> 
+            <p class="description"> Selectors separated by a comma</p>
+            <p> Rules will be applied to both selectors.  </p>
+        </div>
+
+        <div>
+            <h2>📝 Grouping selectors in action ... </h2>
+            <p class="group1">this is a para w/ class of group1</p>
+            <p class="group2">this is a para w/ a class of group2 </p>
+            <p class="group3">this is a para w/ a class of group3</p>
+            
+        </div>
+
+
+        <!-- Descendant combinator =============================== -->
+        <div> 
+            <h2>2. Descendant combinator</h2>
+            <p> <code>x y {...}</code></p>    
+            <p> e.g.</p> 
+            <p> <code>article p {...}</code> or <code>article .class {...}</code></p> 
+            <p class="description"> Selectors separated by space</p>
+            <p> Read from right to left.</p> 
+            <p> In the first example rules will be applied to every <code>p</code> (paragraph) element that is a descendant of an <code>article</code> element. </p>
+            <p> In the second example rules will be applied to every element that has a class attribute value of <code>class</code> that is a descendant of an <code>article</code> element. </p>
+        </div>
+
+        <div>
+            <h2>📝 Descendant combinators in action ...</h2>
+            <section> <p>para 1 in section</p></section>
+            
+            <article>
+                <section>
+                    <p>para 2 in article (nested)</p>
+                </section>
+            </article>
+
+            <article>            
+                <p class="class">para 3 in article with class</p>
+            </article>
+
+            <article>
+                <p>para 4 in article with <span class="class"> a span class</span></p>
+            </article>
+
+            <article class="class">I'm an article with a class </article>
+        </div>
+
+    <!-- Direct child combinator =============================== -->
+
+    <div> 
+        <h2>3. Direct child combinator</h2>
+        <p> <code>x > y {...}</code></p>    
+        <p> e.g. </p>
+        <p><code>ul > li {...}</code> or <code>ul > .li_class {...}</code></p> 
+        <p class="description"> Selectors separated by a greater than sign.</p>
+        <p> Read from right to left.</p> 
+        <p> In the first example rules will be applied to every <code>li</code> element that is a direct child of a <code>ul</code> element. </p>
+        <p> In the second example rules will be applied to every element that has a class attribute value of <code>li_class</code> that is a direct child of a <code>ul</code> element. </p>
+    </div>
+
+    <div>
+        <h2>📝 Direct child combinator in action...</h2>
+        <ul>
+            <li>ul list item 1</li>
+                <ol>
+                    <li>ol list item 1</li>
+                    <li>ol list item 2</li>
+                </ol>
+            <ul>
+                <li class="li_class">this is a ul list item w/ class li_class</li>
+            </ul>
+            <li>ul list item 2</li>
+        </ul>
+    </div>
+
+        
+        
+    <!-- General sibling combinator =========================== -->
+
+        <div> 
+            <h2>4. General sibling combinator</h2>
+            <p> <code>x ~ y {...}</code></p>    
+            <p> e.g. </p>
+            <p> <code>q ~ samp {...}</code></p> 
+            <p class="description"> Selectors separated by a tilde</p>
+            <p> Read from right to left.</p> 
+            <p> In the example teh rule applied to every <code>samp</code> (sample computer output) element (could be multiple elements) that is placed after an <code>q</code> (quote) element. </p>
+            
+        </div>
+        
+
+        <div>
+            <h2>📝 General sibling combinator in action...</h2>
+            <q>quote</q>
+            <p>paragraph 1</p>
+            <samp>Error msg 1 |</samp>  
+            <samp>Error msg 2</samp> 
+            <p>paragraph 2</p>
+            <samp>Error msg 3</samp>
+        </div>
+
+        
+
+        <!-- Adjacent sibling sibling combinator ================= -->
+
+        <div> 
+            <h2>Adjacent sibling combinator</h2>
+            <p> <code>x + y {...}</code></p>    
+            <p> e.g. </p>
+            <p> <code>q + small {...}</code> </p> 
+            <p class="description"> Two selectors separated by a plus sign</p>
+            <p> Read from right to left.</p> 
+            <p> In the example this is the only  <code>small</code> element that comes right after an <code>q</code> (quote) element. </p>
+            
+        </div>
+
+        <div>
+            <h2>📝 Adjacent sibling combinator in action...</h2>
+            <q>quote</q>
+            <small>small text 1 |</small>  
+            <small>small text 2</small> 
+        </div>
+
+    </section>
+</body>
+</html>
